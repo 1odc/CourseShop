@@ -1,0 +1,94 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "React з нуля",
+      "description": "Основи React: компоненти, props, state, hooks.",
+      "price": 1200,
+      "author": "Іван Петренко"
+    },
+    {
+      "id": 2,
+      "title": "JavaScript для початківців",
+      "description": "Змінні, функції, масиви, об'єкти, DOM.",
+      "price": 900,
+      "author": "Марія Коваль"
+    },
+    {
+      "id": 3,
+      "title": "HTML & CSS",
+      "description": "Верстка сайтів, flexbox, grid, адаптивність.",
+      "price": 700,
+      "author": "Олег Шевченко"
+    },
+    {
+      "id": 4,
+      "title": "Node.js та Express",
+      "description": "Створення серверної частини та REST API.",
+      "price": 1500,
+      "author": "Андрій Мельник"
+    },
+    {
+      "title": "How to become admin",
+      "description": "Pay me money to not get the admin account",
+      "author": "Admin",
+      "price": 12000,
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Користувач",
+      "email": "user@example.com"
+    },
+    {
+      "name": "Vlad",
+      "email": "vlgamerm12349@gmail.com",
+      "password": "Vlad16092011",
+      "role": "student",
+      "id": 2
+    },
+    {
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "adminnn",
+      "role": "admin",
+      "id": 1000
+    },
+    {
+      "name": "Aboba",
+      "email": "aboba@gmaik.com",
+      "password": "Abobaa",
+      "role": "student",
+      "id": 1001
+    }
+  ],
+  "purchases": [
+    {
+      "userId": 2,
+      "courseId": 2,
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "courseId": 1,
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "courseId": 3,
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "courseId": 4,
+      "id": 4
+    },
+    {
+      "userId": 1001,
+      "courseId": 4,
+      "id": 5
+    }
+  ]
+}
