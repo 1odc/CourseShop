@@ -8,6 +8,7 @@ const mapCourse = (c: Course): Course => ({
   description: c.description,
   price: c.price,
   author: c.author,
+  image: c.image
 });
 
 export const coursesApi = {
@@ -18,5 +19,8 @@ export const coursesApi = {
   create: async (course: NewCourse): Promise<Course> => {
     const { data } = await api.post<Course>(endpoints.courses, course);
     return mapCourse(data);
+  },
+  remove: async (id: number): Promise<void> => {
+    await api.delete(`${endpoints.courses}/${id}`);
   },
 };

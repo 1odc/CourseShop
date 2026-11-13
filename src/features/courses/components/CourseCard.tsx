@@ -26,7 +26,10 @@ export default function CourseCard({ course }: Props) {
 
   return (
     <article className="course-card">
-      <div className="course-card__image">IMG</div>
+      <div className="course-card__image">
+        {course.image ? (
+          <img src={course.image} alt ={`Обкладинка курсу ${course.title}`}></img>) : ("IMG")}
+      </div>
       <div className="course-card__body">
         <h3 className="course-card__title">{course.title}</h3>
         <p className="course-card__author">{course.author}</p>

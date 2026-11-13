@@ -7,17 +7,24 @@ import {
   courseSchema,
   useAddCourse,
   useCourses,
+  useDeleteCourse,
   type Course,
   type CourseForm,
 } from "@/features/courses";
-
-function Row({ index, style, data }: ListChildComponentProps<Course[]>) {
-  const course = data[index];
+interface CourseRowData{
+  courses: Course[];
+  onDelete: (id:number) => void;
+}
+function Row({ index, style, data }: ListChildComponentProps<CourseRowData>) {
+  const course = data.courses[index];
   return (
     <div className="admin__row" style={style}>
       <span className="admin__row-title">{course.title}</span>
       <span className="admin__row-author">{course.author}</span>
-      <span className="admin__row-price">{course.price} грн</span>
+      <span className="admin__row-price">{course.price} грн
+        <button type="button" onClick={() => data.onDelete(course.id)}>Видалити</button>
+      </span>
+      
     </div>
   );
 }
@@ -27,6 +34,13 @@ export default function AdminPage() {
   const authorName = user?.name ?? "";
   const { data: courses = [], isLoading } = useCourses();
   const addCourse = useAddCourse();
+  const deleteCourse = useDeleteCourse();
+
+  const handleDeleteCourse = (id:number) => {
+    if (window.confirm("Видалити цей курс?")) {
+      deleteCourse.mutate(id);
+    }
+  }
 
   const {
     register,
@@ -35,13 +49,13 @@ export default function AdminPage() {
     formState: { errors },
   } = useForm<CourseForm>({
     resolver: zodResolver(courseSchema),
-    defaultValues: { author: authorName },
+    defaultValues: { author: authorName, image: "" },
   });
 
   const onSubmit: SubmitHandler<CourseForm> = (values) => {
     addCourse.mutate(values, {
       onSuccess: () =>
-        reset({ title: "", description: "", author: authorName }),
+        reset({ title: "", description: "", author: authorName, image: "" }),
     });
   };
 
@@ -68,6 +82,17 @@ export default function AdminPage() {
           <label className="admin__label">Автор</label>
           <input className="admin__input" {...register("author")} />
           {errors.author && <p className="admin__error">{errors.author.message}</p>}
+        </div>
+
+        <div className="admin__field">
+          <label className="admin__label">Посилання на фото (необов'язково)</label>
+          <input
+            className="admin__input"
+            type="url"
+            placeholder="https://example.com/image.jpg"
+            {...register("image")}
+          />
+          {errors.image && <p className="admin__error">{errors.image.message}</p>}
         </div>
 
         <div className="admin__field">
@@ -98,7 +123,7 @@ export default function AdminPage() {
           width="100%"
           itemCount={courses.length}
           itemSize={50}
-          itemData={courses}
+          itemData={{courses, onDelete: handleDeleteCourse}}
         >
           {Row}
         </FixedSizeList>

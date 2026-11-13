@@ -1,4 +1,4 @@
-export { useCourses, useAddCourse } from "./hooks/useCourses";
+export { useCourses, useAddCourse, useDeleteCourse } from "./hooks/useCourses";
 export { courseSchema } from "./schemas";
 export type { CourseForm } from "./schemas";
 export type { Course, NewCourse } from "./types";

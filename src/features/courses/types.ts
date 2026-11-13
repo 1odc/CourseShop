@@ -4,6 +4,7 @@ export interface Course {
   description: string;
   price: number;
   author: string;
+  image?: string;
 }
 
 export type NewCourse = Omit<Course, "id">;

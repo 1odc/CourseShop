@@ -11,3 +11,11 @@ export const useAddCourse = () => {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["courses"] }),
   });
 };
+
+export const useDeleteCourse = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: coursesApi.remove,
+    onSuccess: () => queryClient.invalidateQueries({queryKey: ["courses"]})
+  })
+}

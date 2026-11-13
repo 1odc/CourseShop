@@ -5,35 +5,32 @@
       "title": "React з нуля",
       "description": "Основи React: компоненти, props, state, hooks.",
       "price": 1200,
-      "author": "Іван Петренко"
+      "author": "Іван Петренко",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5agxXUSsI3J6nJYssKdxaZEO5xpTCsh4P6U4qKGXH2w&s=10"
     },
     {
       "id": 2,
       "title": "JavaScript для початківців",
       "description": "Змінні, функції, масиви, об'єкти, DOM.",
       "price": 900,
-      "author": "Марія Коваль"
+      "author": "Марія Коваль",
+      "image": "https://cyberhoot.com/wp-content/uploads/2020/07/Free-Courses-to-learn-JavaScript.jpg"
     },
     {
       "id": 3,
       "title": "HTML & CSS",
       "description": "Верстка сайтів, flexbox, grid, адаптивність.",
       "price": 700,
-      "author": "Олег Шевченко"
+      "author": "Олег Шевченко",
+      "image": "https://media2.dev.to/dynamic/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fa15hmqspl35613gmu0nd.jpeg"
     },
     {
       "id": 4,
       "title": "Node.js та Express",
       "description": "Створення серверної частини та REST API.",
       "price": 1500,
-      "author": "Андрій Мельник"
-    },
-    {
-      "title": "How to become admin",
-      "description": "Pay me money to not get the admin account",
-      "author": "Admin",
-      "price": 12000,
-      "id": 5
+      "author": "Андрій Мельник",
+      "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFauawLzBlhbqVMPjwVr1N82jdf6grKKmhxW2rEyrKKv920yUupNKWqdk8&s=10"
     }
   ],
   "users": [
